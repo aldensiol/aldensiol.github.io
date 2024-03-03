@@ -128,7 +128,7 @@ body {
         width: 600px;
     }
     
-    .about-container {
+    #about-container {
         margin-top: 0px; 
         margin-bottom: 0; 
         transform: translateY(-10%);
@@ -211,7 +211,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 1500px;
+    max-width: 1300px;
     margin: 150px auto;
     margin-bottom: 5vh;
     padding: 10px;
@@ -225,8 +225,9 @@ body {
 }
 
 .resume-content {
-    max-width: 800px;
+    max-width: 50%;
     margin: auto;
+    text-align: justify;
 }
 
 .resume-item {
@@ -236,6 +237,13 @@ body {
 .resume-item h3 {
     font-size: 2rem;
     margin-bottom: 20px;
+}
+
+.section-title {
+    font-weight: 700;
+    text-align: center;
+    font-size: 3.9em;
+    font-family: 'Roboto', sans-serif;
 }
 
 .experience-item h4 {
@@ -249,4 +257,40 @@ body {
 
 ul {
     list-style-position: inside;
+}
+
+.project-text {
+    font-size: 3em;
+    font-family: Nunito, sans-serif;
+    text-align: center;
+}
+
+@media only screen and (max-width: 768px) {
+    #home .container, #about .second-container, .third-container {
+        flex-direction: column;
+        padding: 0 10px;
+    }
+
+    #home .profile-content, #home .profile-picture-wrapper, #about-container, .resume-content {
+        flex-basis: 100%;
+        text-align: center;
+    }
+
+    #name {
+        font-size: 5em; /* Adjust font size for smaller screens */
+    }
+
+    .page-break-1, .page-break-2, .page-break-3, #tracker-container, #image-track > .image {
+        display: none; /* Optionally hide elements that may not fit well on small screens */
+    }
+
+    .social-links a i, .fa-python, .fa-java, /* and other icons */ {
+        font-size: 2em; /* Adjust icon size for smaller screens */
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    #hello, #course, p, .header, .stack-inside, .hobby-header {
+        font-size: 1.5em; /* Further reduce font size for very small screens */
+    }
 }

@@ -1,6 +1,9 @@
 const track = document.getElementById("image-track");
+const aboutText = document.getElementById("about-container"); // Ensure this is the correct ID
 
-const handleOnDown = e => track.dataset.mouseDownAt = e.clientX;
+const handleOnDown = e => {
+  track.dataset.mouseDownAt = e.clientX;
+}
 
 const handleOnUp = () => {
   track.dataset.mouseDownAt = "0";  
@@ -18,11 +21,15 @@ const handleOnMove = e => {
         nextPercentage = Math.max(Math.min(nextPercentageUnconstrained, 0), -100);
   
   track.dataset.percentage = nextPercentage;
-  
+
   track.animate({
     transform: `translate(${nextPercentage}%, -50%)`
   }, { duration: 1200, fill: "forwards" });
-  
+
+  // Dynamically adjust the opacity based on the nextPercentage
+  const dynamicOpacity = Math.max(0, Math.min(1, 1 - Math.abs(nextPercentage) / 100));
+  aboutText.style.opacity = dynamicOpacity;
+
   for(const image of track.getElementsByClassName("image")) {
     image.animate({
       objectPosition: `${100 + nextPercentage}% center`
