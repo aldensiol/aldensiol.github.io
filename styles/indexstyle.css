@@ -15,7 +15,7 @@ body {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        max-width: 1200px;
+        max-width: 1500px;
         margin: 50px auto;
         padding: 20px;
         box-sizing: border-box;
@@ -48,13 +48,13 @@ body {
     }
     
     #hello {
-        font-size: 2em;
+        font-size: 3em;
         font-weight: 200;
         font-family: 'Roboto', sans-serif;
     }
     
     #name {
-        font-size: 7.5em;
+        font-size: 10em;
         font-family: 'Roboto', sans-serif;
         font-weight: 700;
         margin-top: 10px;
@@ -66,7 +66,7 @@ body {
     }
     
     #course {
-        font-size: 1.5em;
+        font-size: 1.7em;
         font-family: 'Nunito', sans-serif;
         color: #2C3639;
     }
@@ -96,7 +96,7 @@ body {
     
 }
 
-.page-break-1, .page-break-2 {
+.page-break-1, .page-break-2, .page-break-3 {
     height: 100px; 
     background-image: linear-gradient(to right, #DCD7C9, #2C3639, #DCD7C9);
     background-repeat: no-repeat;
@@ -106,36 +106,70 @@ body {
 
 #about {
     
-    min-height: 70vh;
+    min-height: 50vh;
+    justify-content: start;
+    align-items: center;
 
     .second-container {
         display: flex;
         justify-content: space-between;
         align-items: center;
         max-width: 1500px;
-        margin: 50px auto;
-        padding: 20px;
+        margin: 150px auto;
+        margin-bottom: 5vh;
+        padding: 10px;
         box-sizing: border-box;
     }
 
     p {
+        margin: auto;
         font-size: 1.7em;
         width: 600px;
     }
     
     .about-container {
-        margin-top: 20px; /* Adjust as necessary */
-        margin-bottom: 0; /* This creates space between the about-container and the tracker-container */
+        margin-top: 0px; 
+        margin-bottom: 0; 
+        transform: translateY(-10%);
     }
     
     .header {
         font-family: 'Roboto', sans-serif;
+        margin-bottom: 10px;
+        margin-top: 0px;
         font-weight: 700;
         text-align: left;
-        font-size: 3.5em;
+        font-size: 3.9em;
     }
     
-    
+    .stack {
+        font-size: 3em;
+    }
+
+    .stack-inside, .hobby-header {
+        font-size: 3em;
+        margin-bottom: 2px;
+    }
+        /* Python icon */
+    .fa-python { color: #3776AB; }
+    /* Java icon */
+    .fa-java { color: #007396; }
+    /* JavaScript icon */
+    .fa-js-square { color: #dfc502; }
+    /* HTML5 icon */
+    .fa-html5 { color: #E34F26; }
+    /* CSS3 icon */
+    .fa-css3-alt { color: #1572B6; }
+    /* Node.js icon */
+    .fa-node-js { color: #339933; }
+    /* Docker icon */
+    .fa-docker { color: #2496ED; }
+    /* Git icon */
+    .fa-git-alt { color: #F05032; }
+    /* React icon */
+    .fa-react { color: #61DAFB; }
+    /* Vue.js icon */
+    .fa-vuejs { color: #4FC08D; }
     
     #tracker-container {
         /* Central alignment adjustments */
@@ -156,10 +190,61 @@ body {
     }
     
     #image-track > .image {
+        border-radius: 10px;
+        box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2), -3px -3px 5px rgba(0, 0, 0, 0.2);
         width: 48vmin;
         height: 58vmin;
         object-fit: cover;
         object-position: 100% center;
     }
     
+}
+
+/* Resume Section Styles */
+.resume-section {
+    padding: 60px 0;
+}
+
+.third-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1500px;
+    margin: 150px auto;
+    margin-bottom: 5vh;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 50px;
+    font-size: 2.5rem;
+}
+
+.resume-content {
+    max-width: 800px;
+    margin: auto;
+}
+
+.resume-item {
+    margin-bottom: 40px;
+}
+
+.resume-item h3 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.experience-item h4 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.experience-item p, .experience-item li {
+    font-size: 1rem;
+}
+
+ul {
+    list-style-position: inside;
 }
