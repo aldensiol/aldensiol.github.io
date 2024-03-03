@@ -15,7 +15,7 @@ body {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        max-width: 1500px;
+        max-width: 1300px;
         margin: 50px auto;
         padding: 20px;
         box-sizing: border-box;
@@ -69,6 +69,7 @@ body {
         font-size: 1.7em;
         font-family: 'Nunito', sans-serif;
         color: #2C3639;
+        text-align: justify;
     }
     
     .social-links a {
@@ -114,7 +115,7 @@ body {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        max-width: 1500px;
+        max-width: 1300px;
         margin: 150px auto;
         margin-bottom: 5vh;
         padding: 10px;
@@ -176,7 +177,8 @@ body {
         position: relative; /* Ensure it stays flexible within the flex layout */
         width: 100%; 
         margin: auto; 
-        margin-top: 20%;
+        margin-top: 24%;
+        transform: translateX(-10%);
     }
     
     #image-track {
@@ -192,8 +194,8 @@ body {
     #image-track > .image {
         border-radius: 10px;
         box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2), -3px -3px 5px rgba(0, 0, 0, 0.2);
-        width: 48vmin;
-        height: 58vmin;
+        width: 56vmin;
+        height: 75vmin;
         object-fit: cover;
         object-position: 100% center;
     }
