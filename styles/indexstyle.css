@@ -1,126 +1,165 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400&family=Roboto:wght@700&display=swap');
+
 
 body {
-    font-family: 'Avenir', 'Roboto', Arial, sans-serif;
+    min-height: 100vh;
+    font-family: 'Nunito', sans-serif;
     margin: 0;
     padding: 0;
-    text-align: center;
-    display: flex; 
-    flex-direction: column; 
-    align-items: center; 
-    justify-content: center; 
-    min-height: 100vh; 
     background-color: #DCD7C9; 
     color: #2C3639; 
 }
 
-.container, .about-container, .projects-container {
-    max-width: 960px;
-    margin: auto;
-    padding: 20px;
-    box-sizing: border-box;
-    border-radius: 10px;
+#home {
+    .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1200px;
+        margin: 50px auto;
+        padding: 20px;
+        box-sizing: border-box;
+    }
+    
+    .profile-content {
+        flex-basis: 50%;
+        text-align: left;
+    }
+    
+    .profile-picture-wrapper {
+        flex-basis: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+    }
+    
+    .profile-picture {
+        width: 80%; 
+        max-width: 500px; 
+        border-radius: 10px; 
+        object-fit: cover; 
+    }
+    
+    h1 {
+        margin: 0;
+        color: #2C3639;
+        line-height: 1.2;
+    }
+    
+    #hello {
+        font-size: 2em;
+        font-weight: 200;
+        font-family: 'Roboto', sans-serif;
+    }
+    
+    #name {
+        font-size: 7.5em;
+        font-family: 'Roboto', sans-serif;
+        font-weight: 700;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    
+    .dot {
+        color: #0077b5;
+    }
+    
+    #course {
+        font-size: 1.5em;
+        font-family: 'Nunito', sans-serif;
+        color: #2C3639;
+    }
+    
+    .social-links a {
+        margin: 0 10px;
+        color: #333;
+        text-decoration: none;
+        transition: color 0.3s;
+    }
+    
+    .social-links a i {
+        font-size: 3em;
+    }
+    
+    .social-links .linkedin:hover {
+        color: #0077b5; 
+    }
+    
+    .social-links .github:hover {
+        color: #8a8a8a;
+    }
+    
+    .social-links .email:hover {
+        color: #c9510c;
+    }
+    
 }
 
-.profile-picture-wrapper {
-    width: 300px; 
-    height: 300px;
-    position: relative;
-    border-radius: 50%;
-    overflow: hidden;
-    margin: 20px auto;
+.page-break-1, .page-break-2 {
+    height: 100px; 
+    background-image: linear-gradient(to right, #DCD7C9, #2C3639, #DCD7C9);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 80% 2px;
 }
 
-.profile-picture {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; 
-}
+#about {
+    
+    min-height: 70vh;
 
-#name {
-    font-size: 50px;
-    margin-bottom: 0px;
-    color: #2C3639;
-}
+    .second-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1500px;
+        margin: 50px auto;
+        padding: 20px;
+        box-sizing: border-box;
+    }
 
-#course {
-    font-size: 28px;
-    margin-top: 0px;
-    margin-bottom: 0px;
-    color: #2C3639;
-}
-
-#desc {
-    font-size: 20px;
-    margin-top: 0px;
-    color: #A27B5C;
-}
-
-.social-links a {
-    margin: 0 10px;
-    color: #333; 
-    text-decoration: none;
-    transition: color 0.3s; 
-}
-
-.social-links a i {
-    font-size: 3em;
-}
-
-.social-links .linkedin:hover {
-    color: #0077b5; 
-}
-
-.social-links .github:hover {
-    color: lightgray;
-}
-
-.social-links .email:hover {
-    color: #c9510c;
-}
-
-nav ul {
-    list-style-type: none;
-    padding: 0;
-    width: 100%;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-}
-
-nav ul li {
-    display: inline;
-    margin: 0 20px;
-}
-
-nav ul li a {
-    text-decoration: none;
-    color: #333; 
-    font-weight: bold;
-}
-
-nav ul li a:hover {
-    color: #555; 
-}
-
-.project-card {
-    background-color: #F8EDE3; 
-    border: 1px solid #ddd;
-    padding: 10px;
-    margin-bottom: 20px;
-    display: block;
-    width: calc(100% - 22px);
-    text-align: left;
-}
-
-.project-card a {
-    display: inline-block;
-    margin-top: 10px;
-    text-decoration: none;
-    background-color: #ddd; 
-    color: #333;
-    padding: 5px 10px;
-    border-radius: 5px;
-}
-
-.project-card a:hover {
-    background-color: #bbb; 
+    p {
+        font-size: 1.7em;
+        width: 600px;
+    }
+    
+    .about-container {
+        margin-top: 20px; /* Adjust as necessary */
+        margin-bottom: 0; /* This creates space between the about-container and the tracker-container */
+    }
+    
+    .header {
+        font-family: 'Roboto', sans-serif;
+        font-weight: 700;
+        text-align: left;
+        font-size: 3.5em;
+    }
+    
+    
+    
+    #tracker-container {
+        /* Central alignment adjustments */
+        position: relative; /* Ensure it stays flexible within the flex layout */
+        width: 100%; 
+        margin: auto; 
+        margin-top: 20%;
+    }
+    
+    #image-track {
+        display: flex;
+        gap: 3vmin;
+        position: absolute;
+        left: 20%;
+        top: 50%;
+        transform: translate(0%, -50%);
+        user-select: none; /* Prevent image highlighting */
+    }
+    
+    #image-track > .image {
+        width: 48vmin;
+        height: 58vmin;
+        object-fit: cover;
+        object-position: 100% center;
+    }
+    
 }
