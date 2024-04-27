@@ -173,19 +173,17 @@ body {
     .fa-vuejs { color: #4FC08D; }
     
     #tracker-container {
-        /* Central alignment adjustments */
-        position: relative; /* Ensure it stays flexible within the flex layout */
+        position:relative;
         width: 100%; 
         margin: auto; 
         margin-top: 24%;
-        transform: translateX(-10%);
     }
     
     #image-track {
         display: flex;
         gap: 3vmin;
         position: absolute;
-        left: 20%;
+        left: 10%;
         top: 50%;
         transform: translate(0%, -50%);
         user-select: none; /* Prevent image highlighting */
@@ -194,10 +192,10 @@ body {
     #image-track > .image {
         border-radius: 10px;
         box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2), -3px -3px 5px rgba(0, 0, 0, 0.2);
-        width: 56vmin;
-        height: 75vmin;
+        width: 50vmin;
+        height: auto;
         object-fit: cover;
-        object-position: 100% center;
+        object-position: center;
     }
     
 }
