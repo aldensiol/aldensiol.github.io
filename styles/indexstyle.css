@@ -107,6 +107,7 @@ body {
 
 #about {
     
+    overflow: hidden;
     min-height: 50vh;
     justify-content: start;
     align-items: center;
@@ -115,11 +116,12 @@ body {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        max-width: 1300px;
+        max-width: 90%;
         margin: 150px auto;
         margin-bottom: 5vh;
         padding: 10px;
         box-sizing: border-box;
+        height: 90%;
     }
 
     p {
