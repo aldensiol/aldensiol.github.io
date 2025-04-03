@@ -6,8 +6,8 @@ body {
     font-family: 'Nunito', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #DCD7C9; 
-    color: #2C3639; 
+    background-color: #DCD7C9;
+    color: #2C3639;
 }
 
 #home {
@@ -20,12 +20,12 @@ body {
         padding: 20px;
         box-sizing: border-box;
     }
-    
+
     .profile-content {
         flex-basis: 50%;
         text-align: left;
     }
-    
+
     .profile-picture-wrapper {
         flex-basis: 50%;
         display: flex;
@@ -33,26 +33,26 @@ body {
         align-items: center;
         padding: 20px;
     }
-    
+
     .profile-picture {
-        width: 80%; 
-        max-width: 500px; 
-        border-radius: 10px; 
-        object-fit: cover; 
+        width: 80%;
+        max-width: 500px;
+        border-radius: 10px;
+        object-fit: cover;
     }
-    
+
     h1 {
         margin: 0;
         color: #2C3639;
         line-height: 1.2;
     }
-    
+
     #hello {
         font-size: 3em;
         font-weight: 200;
         font-family: 'Roboto', sans-serif;
     }
-    
+
     #name {
         font-size: 10em;
         font-family: 'Roboto', sans-serif;
@@ -60,45 +60,47 @@ body {
         margin-top: 10px;
         margin-bottom: 10px;
     }
-    
+
     .dot {
         color: #0077b5;
     }
-    
+
     #course {
         font-size: 1.7em;
         font-family: 'Nunito', sans-serif;
         color: #2C3639;
         text-align: justify;
     }
-    
+
     .social-links a {
         margin: 0 10px;
         color: #333;
         text-decoration: none;
         transition: color 0.3s;
     }
-    
+
     .social-links a i {
         font-size: 3em;
     }
-    
+
     .social-links .linkedin:hover {
-        color: #0077b5; 
+        color: #0077b5;
     }
-    
+
     .social-links .github:hover {
         color: #8a8a8a;
     }
-    
+
     .social-links .email:hover {
         color: #c9510c;
     }
-    
+
 }
 
-.page-break-1, .page-break-2, .page-break-3 {
-    height: 100px; 
+.page-break-1,
+.page-break-2,
+.page-break-3 {
+    height: 100px;
     background-image: linear-gradient(to right, #DCD7C9, #2C3639, #DCD7C9);
     background-repeat: no-repeat;
     background-position: center;
@@ -106,7 +108,7 @@ body {
 }
 
 #about {
-    
+
     overflow: hidden;
     min-height: 50vh;
     justify-content: start;
@@ -129,13 +131,13 @@ body {
         font-size: 1.7em;
         width: 600px;
     }
-    
+
     #about-container {
-        margin-top: 0px; 
-        margin-bottom: 0; 
+        margin-top: 0px;
+        margin-bottom: 0;
         transform: translateY(-10%);
     }
-    
+
     .header {
         font-family: 'Roboto', sans-serif;
         margin-bottom: 10px;
@@ -144,43 +146,74 @@ body {
         text-align: left;
         font-size: 3.9em;
     }
-    
+
     .stack {
         font-size: 3em;
     }
 
-    .stack-inside, .hobby-header {
+    .stack-inside,
+    .hobby-header {
         font-size: 3em;
         margin-bottom: 2px;
     }
-        /* Python icon */
-    .fa-python { color: #3776AB; }
+
+    /* Python icon */
+    .fa-python {
+        color: #3776AB;
+    }
+
     /* Java icon */
-    .fa-java { color: #007396; }
+    .fa-java {
+        color: #007396;
+    }
+
     /* JavaScript icon */
-    .fa-js-square { color: #dfc502; }
+    .fa-js-square {
+        color: #dfc502;
+    }
+
     /* HTML5 icon */
-    .fa-html5 { color: #E34F26; }
+    .fa-html5 {
+        color: #E34F26;
+    }
+
     /* CSS3 icon */
-    .fa-css3-alt { color: #1572B6; }
+    .fa-css3-alt {
+        color: #1572B6;
+    }
+
     /* Node.js icon */
-    .fa-node-js { color: #339933; }
+    .fa-node-js {
+        color: #339933;
+    }
+
     /* Docker icon */
-    .fa-docker { color: #2496ED; }
+    .fa-docker {
+        color: #2496ED;
+    }
+
     /* Git icon */
-    .fa-git-alt { color: #F05032; }
+    .fa-git-alt {
+        color: #F05032;
+    }
+
     /* React icon */
-    .fa-react { color: #61DAFB; }
+    .fa-react {
+        color: #61DAFB;
+    }
+
     /* Vue.js icon */
-    .fa-vuejs { color: #4FC08D; }
-    
+    .fa-vuejs {
+        color: #4FC08D;
+    }
+
     #tracker-container {
-        position:relative;
-        width: 100%; 
-        margin: auto; 
+        position: relative;
+        width: 100%;
+        margin: auto;
         margin-top: 24%;
     }
-    
+
     #image-track {
         display: flex;
         gap: 3vmin;
@@ -188,10 +221,11 @@ body {
         left: 10%;
         top: 50%;
         transform: translate(0%, -50%);
-        user-select: none; /* Prevent image highlighting */
+        user-select: none;
+        /* Prevent image highlighting */
     }
-    
-    #image-track > .image {
+
+    #image-track>.image {
         border-radius: 10px;
         box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2), -3px -3px 5px rgba(0, 0, 0, 0.2);
         width: 50vmin;
@@ -199,7 +233,7 @@ body {
         object-fit: cover;
         object-position: center;
     }
-    
+
 }
 
 /* Resume Section Styles */
@@ -251,7 +285,8 @@ body {
     margin-bottom: 10px;
 }
 
-.experience-item p, .experience-item li {
+.experience-item p,
+.experience-item li {
     font-size: 1rem;
 }
 
@@ -265,32 +300,211 @@ ul {
     text-align: center;
 }
 
+#projects {
+    padding: 60px 0;
+}
+
+.fourth-container {
+    max-width: 1300px;
+    margin: 150px auto;
+    margin-bottom: 5vh;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    justify-content: center;
+}
+
+.project-card {
+    background-color: #EAE7DC;
+    /* Slightly lighter than your background */
+    border-radius: 10px;
+    padding: 1.5rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid rgba(44, 54, 57, 0.1);
+    /* Based on your text color */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.project-title {
+    font-size: 1.5rem;
+    margin-bottom: 0.75rem;
+    color: #2C3639;
+    /* Your main text color */
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+}
+
+.project-description {
+    color: #2C3639;
+    /* Your main text color */
+    margin-bottom: 1.5rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    font-family: 'Nunito', sans-serif;
+}
+
+.project-links {
+    margin-bottom: 1rem;
+}
+
+.project-links a {
+    display: inline-flex;
+    align-items: center;
+    color: #0077b5;
+    /* Your accent blue color from the dot class */
+    text-decoration: none;
+    margin-right: 1rem;
+    font-size: 0.9rem;
+    transition: color 0.2s ease;
+    font-family: 'Nunito', sans-serif;
+}
+
+.project-links a:hover {
+    color: #2C3639;
+    /* Your main text color */
+}
+
+.project-links i {
+    margin-right: 0.5rem;
+    font-size: 1.1rem;
+}
+
+.project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.tag {
+    background-color: rgba(0, 119, 181, 0.1);
+    /* Semi-transparent version of your blue */
+    color: #0077b5;
+    /* Your accent blue color */
+    padding: 0.25rem 0.75rem;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    display: inline-block;
+    font-family: 'Nunito', sans-serif;
+}
+
+/* Project Image Styling */
+.project-image-container {
+    width: 100%;
+    height: 180px;
+    overflow: hidden;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+.project-image {
+    width: 100%;
+    height: 110%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.project-card:hover .project-image {
+    transform: scale(1.05);
+}
+
+/* Fix for Projects title alignment */
+.fourth-container {
+    max-width: 1300px;
+    margin: 80px auto;
+    margin-bottom: 5vh;
+    padding: 10px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.section-title {
+    font-weight: 700;
+    text-align: center;
+    font-size: 3.9em;
+    font-family: 'Roboto', sans-serif;
+    align-self: flex-start;
+    margin-bottom: 30px;
+    margin-top: 0;
+}
+
 @media only screen and (max-width: 768px) {
-    #home .container, #about .second-container, .third-container {
+    .projects-grid {
+        grid-template-columns: 1fr;
+        max-width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .project-title {
+        font-size: 1.3rem;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+
+    #home .container,
+    #about .second-container,
+    .third-container {
         flex-direction: column;
         padding: 0 10px;
     }
 
-    #home .profile-content, #home .profile-picture-wrapper, #about-container, .resume-content {
+    #home .profile-content,
+    #home .profile-picture-wrapper,
+    #about-container,
+    .resume-content {
         flex-basis: 100%;
         text-align: center;
     }
 
     #name {
-        font-size: 5em; /* Adjust font size for smaller screens */
+        font-size: 5em;
+        /* Adjust font size for smaller screens */
     }
 
-    .page-break-1, .page-break-2, .page-break-3, #tracker-container, #image-track > .image {
-        display: none; /* Optionally hide elements that may not fit well on small screens */
+    .page-break-1,
+    .page-break-2,
+    .page-break-3,
+    #tracker-container,
+    #image-track>.image {
+        display: none;
+        /* Optionally hide elements that may not fit well on small screens */
     }
 
-    .social-links a i, .fa-python, .fa-java, /* and other icons */ {
-        font-size: 2em; /* Adjust icon size for smaller screens */
+    .social-links a i,
+    .fa-python,
+    .fa-java,
+    /* and other icons */
+        {
+        font-size: 2em;
+        /* Adjust icon size for smaller screens */
     }
 }
 
 @media only screen and (max-width: 480px) {
-    #hello, #course, p, .header, .stack-inside, .hobby-header {
-        font-size: 1.5em; /* Further reduce font size for very small screens */
+
+    #hello,
+    #course,
+    p,
+    .header,
+    .stack-inside,
+    .hobby-header {
+        font-size: 1.5em;
+        /* Further reduce font size for very small screens */
     }
 }
