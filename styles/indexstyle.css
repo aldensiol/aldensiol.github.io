@@ -568,29 +568,28 @@ section {
 
 .project-links {
     margin-bottom: 1rem;
+    margin-top: 0.5rem;
 }
 
 .project-links a {
     display: inline-flex;
     align-items: center;
     color: var(--accent-color);
+    /* Use primary accent for links */
     text-decoration: none;
     margin-right: 1rem;
     font-size: 0.9rem;
     transition: color 0.2s ease;
     font-family: var(--font-primary);
     padding: 2px 4px;
-    /* Add padding for focus outline */
     border-radius: 3px;
-    /* Rounded corners for focus */
 }
 
 .project-links a:hover,
 .project-links a:focus {
     color: var(--link-hover-color);
-    /* Use variable */
+    /* Use warm variable */
     text-decoration: underline;
-    /* Add underline on hover/focus */
 }
 
 .project-links i {
