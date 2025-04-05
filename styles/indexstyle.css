@@ -99,21 +99,27 @@ nav li {
     /* Margin only on the left for spacing */
 }
 
+.nav-logo-inline {
+    height: 22px;
+    width: auto;
+    margin-right: 8px;
+    vertical-align: middle;
+    position: relative;
+    top: -1px;
+}
+
 nav a {
+    display: inline-flex;
+    align-items: center;
     text-decoration: none;
     color: var(--text-color);
     font-weight: 600;
-    /* Slightly less bold than 700 */
     font-family: var(--font-secondary);
     padding: 8px 12px;
-    /* Adjust padding for better click area */
     border-radius: 6px;
-    /* Slightly round corners */
     position: relative;
-    /* Needed for pseudo-element */
     transition: color 0.3s ease, background-color 0.3s ease;
     overflow: hidden;
-    /* Hide the pseudo-element initially */
 }
 
 /* Underline effect on hover/focus */
@@ -121,15 +127,11 @@ nav a::after {
     content: '';
     position: absolute;
     bottom: 5px;
-    /* Position underline slightly above bottom */
     left: 12px;
-    /* Match left padding */
     right: 12px;
-    /* Match right padding */
     height: 2px;
     background-color: var(--accent-color);
     transform: scaleX(0);
-    /* Start hidden */
     transform-origin: left;
     transition: transform 0.3s ease;
 }
