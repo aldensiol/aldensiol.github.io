@@ -6,20 +6,20 @@ const handleOnDown = e => {
 }
 
 const handleOnUp = () => {
-  track.dataset.mouseDownAt = "0";  
+  track.dataset.mouseDownAt = "0";
   track.dataset.prevPercentage = track.dataset.percentage;
 }
 
 const handleOnMove = e => {
-  if(track.dataset.mouseDownAt === "0") return;
-  
+  if (track.dataset.mouseDownAt === "0") return;
+
   const mouseDelta = parseFloat(track.dataset.mouseDownAt) - e.clientX,
-        maxDelta = window.innerWidth / 2;
-  
+    maxDelta = window.innerWidth / 2;
+
   const percentage = (mouseDelta / maxDelta) * -100,
-        nextPercentageUnconstrained = parseFloat(track.dataset.prevPercentage) + percentage,
-        nextPercentage = Math.max(Math.min(nextPercentageUnconstrained, 0), -100);
-  
+    nextPercentageUnconstrained = parseFloat(track.dataset.prevPercentage) + percentage,
+    nextPercentage = Math.max(Math.min(nextPercentageUnconstrained, 0), -100);
+
   track.dataset.percentage = nextPercentage;
 
   track.animate({
@@ -29,7 +29,7 @@ const handleOnMove = e => {
   const dynamicOpacity = Math.max(0, Math.min(1, 1 - Math.abs(nextPercentage) / 100));
   aboutText.style.opacity = dynamicOpacity;
 
-  for(const image of track.getElementsByClassName("image")) {
+  for (const image of track.getElementsByClassName("image")) {
     image.animate({
       objectPosition: `${100 + nextPercentage}% center`
     }, { duration: 1200, fill: "forwards" });

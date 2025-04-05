@@ -1,439 +1,538 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400&family=Roboto:wght@700&display=swap');
 
+/* Define CSS Variables (Custom Properties) */
+:root {
+    --bg-color: #DCD7C9;
+    --text-color: #2C3639;
+    --accent-color: #0077b5;
+    /* LinkedIn Blue */
+    --card-bg-color: #EAE7DC;
+    --border-color: rgba(44, 54, 57, 0.1);
+    --shadow-color: rgba(0, 0, 0, 0.1);
+    --hover-shadow-color: rgba(0, 0, 0, 0.2);
+    --tag-bg-color: rgba(0, 119, 181, 0.1);
+    /* Semi-transparent accent */
+    --link-hover-color: #A27B5C;
+    /* A complementary color */
+
+    --font-primary: 'Nunito', sans-serif;
+    --font-secondary: 'Roboto', sans-serif;
+
+    --nav-height: 60px;
+    /* Adjust as needed */
+    --nav-bg-color: #cfcabb;
+    /* Slightly darker shade of the main bg */
+    --nav-border-color: #bcaea0;
+    /* A bit darker for the border */
+    --nav-link-hover-bg: rgba(44, 54, 57, 0.05);
+    /* Subtle background on link hover */
+}
+
+/* Global Styles */
+html {
+    scroll-behavior: smooth;
+    /* Enable smooth scrolling for nav links */
+    scroll-padding-top: var(--nav-height);
+    /* Offset scroll target for fixed nav */
+}
 
 body {
     min-height: 100vh;
-    font-family: 'Nunito', sans-serif;
+    font-family: var(--font-primary);
     margin: 0;
     padding: 0;
-    background-color: #DCD7C9;
-    color: #2C3639;
+    padding-top: var(--nav-height);
+    /* Prevent content from hiding behind fixed nav */
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    /* Improve readability */
 }
 
-#home {
-    .container {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        max-width: 1300px;
-        margin: 50px auto;
-        padding: 20px;
-        box-sizing: border-box;
-    }
-
-    .profile-content {
-        flex-basis: 50%;
-        text-align: left;
-    }
-
-    .profile-picture-wrapper {
-        flex-basis: 50%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding: 20px;
-    }
-
-    .profile-picture {
-        width: 80%;
-        max-width: 500px;
-        border-radius: 10px;
-        object-fit: cover;
-    }
-
-    h1 {
-        margin: 0;
-        color: #2C3639;
-        line-height: 1.2;
-    }
-
-    #hello {
-        font-size: 3em;
-        font-weight: 200;
-        font-family: 'Roboto', sans-serif;
-    }
-
-    #name {
-        font-size: 10em;
-        font-family: 'Roboto', sans-serif;
-        font-weight: 700;
-        margin-top: 10px;
-        margin-bottom: 10px;
-    }
-
-    .dot {
-        color: #0077b5;
-    }
-
-    #course {
-        font-size: 1.7em;
-        font-family: 'Nunito', sans-serif;
-        color: #2C3639;
-        text-align: justify;
-    }
-
-    .social-links a {
-        margin: 0 10px;
-        color: #333;
-        text-decoration: none;
-        transition: color 0.3s;
-    }
-
-    .social-links a i {
-        font-size: 3em;
-    }
-
-    .social-links .linkedin:hover {
-        color: #0077b5;
-    }
-
-    .social-links .github:hover {
-        color: #8a8a8a;
-    }
-
-    .social-links .email:hover {
-        color: #c9510c;
-    }
-
+/* Basic focus outline for accessibility */
+a:focus,
+button:focus,
+[tabindex]:focus {
+    outline: 2px solid var(--accent-color);
+    outline-offset: 2px;
 }
 
-.page-break-1,
-.page-break-2,
-.page-break-3 {
-    height: 100px;
-    background-image: linear-gradient(to right, #DCD7C9, #2C3639, #DCD7C9);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 80% 2px;
+/* Remove default outline if using custom focus styles */
+*:focus:not(:focus-visible) {
+    outline: none;
 }
 
-#about {
 
-    overflow: hidden;
-    min-height: 50vh;
-    justify-content: start;
+/* Navigation Styles */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    /* Use the new nav background color */
+    background-color: var(--nav-bg-color);
+    /* Remove box-shadow, use border instead for cleaner look */
+    /* box-shadow: 0 2px 5px var(--shadow-color); */
+    border-bottom: 1px solid var(--nav-border-color);
+    /* Add a subtle bottom border */
+    z-index: 1000;
+    height: var(--nav-height);
+    display: flex;
     align-items: center;
-
-    .second-container {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        max-width: 90%;
-        margin: 150px auto;
-        margin-bottom: 5vh;
-        padding: 10px;
-        box-sizing: border-box;
-        height: 90%;
-    }
-
-    p {
-        margin: auto;
-        font-size: 1.7em;
-        width: 600px;
-    }
-
-    #about-container {
-        margin-top: 0px;
-        margin-bottom: 0;
-        transform: translateY(-10%);
-    }
-
-    .header {
-        font-family: 'Roboto', sans-serif;
-        margin-bottom: 10px;
-        margin-top: 0px;
-        font-weight: 700;
-        text-align: left;
-        font-size: 3.9em;
-    }
-
-    .stack {
-        font-size: 3em;
-    }
-
-    .stack-inside,
-    .hobby-header {
-        font-size: 3em;
-        margin-bottom: 2px;
-    }
-
-    /* Python icon */
-    .fa-python {
-        color: #3776AB;
-    }
-
-    /* Java icon */
-    .fa-java {
-        color: #007396;
-    }
-
-    /* JavaScript icon */
-    .fa-js-square {
-        color: #dfc502;
-    }
-
-    /* HTML5 icon */
-    .fa-html5 {
-        color: #E34F26;
-    }
-
-    /* CSS3 icon */
-    .fa-css3-alt {
-        color: #1572B6;
-    }
-
-    /* Node.js icon */
-    .fa-node-js {
-        color: #339933;
-    }
-
-    /* Docker icon */
-    .fa-docker {
-        color: #2496ED;
-    }
-
-    /* Git icon */
-    .fa-git-alt {
-        color: #F05032;
-    }
-
-    /* GitHub icon */
-    .fa-github {
-        color: #181717;
-    }
-
-    /* GitLab icon */
-    .fa-gitlab {
-        color: #FC6D26;
-    }
-
-    /* Vue.js icon */
-    .fa-vuejs {
-        color: #4FC08D;
-    }
-
-    /* AI/Robot icon */
-    .fa-robot {
-        color: #00B0D8;
-    }
-
-    /* Data Science/Charts icon */
-    .fa-chart-bar {
-        color: #FF6384;
-    }
-
-    /* AWS icon */
-    .fa-aws {
-        color: #FF9900;
-    }
-
-    /* Database icon */
-    .fa-database {
-        color: #336791;
-    }
-
-    /* Slack icon */
-    .fa-user-secret {
-        color: #4A154B;
-    }
-
-    #tracker-container {
-        position: relative;
-        width: 100%;
-        margin: auto;
-        margin-top: 24%;
-    }
-
-    #image-track {
-        display: flex;
-        gap: 3vmin;
-        position: absolute;
-        left: 10%;
-        top: 50%;
-        transform: translate(0%, -50%);
-        user-select: none;
-        /* Prevent image highlighting */
-    }
-
-    #image-track>.image {
-        border-radius: 10px;
-        box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2), -3px -3px 5px rgba(0, 0, 0, 0.2);
-        width: 50vmin;
-        height: auto;
-        object-fit: cover;
-        object-position: center;
-    }
-
+    transition: background-color 0.3s ease;
+    /* Smooth transition if you add scroll effects later */
 }
 
-/* Resume Section Styles */
-.resume-section {
-    padding: 60px 0;
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0 40px;
+    /* Increase padding slightly */
+    display: flex;
+    justify-content: flex-end;
+    /* Align links to the right */
+    width: 100%;
 }
 
-.third-container {
+nav li {
+    margin: 0 0 0 25px;
+    /* Margin only on the left for spacing */
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 600;
+    /* Slightly less bold than 700 */
+    font-family: var(--font-secondary);
+    padding: 8px 12px;
+    /* Adjust padding for better click area */
+    border-radius: 6px;
+    /* Slightly round corners */
+    position: relative;
+    /* Needed for pseudo-element */
+    transition: color 0.3s ease, background-color 0.3s ease;
+    overflow: hidden;
+    /* Hide the pseudo-element initially */
+}
+
+/* Underline effect on hover/focus */
+nav a::after {
+    content: '';
+    position: absolute;
+    bottom: 5px;
+    /* Position underline slightly above bottom */
+    left: 12px;
+    /* Match left padding */
+    right: 12px;
+    /* Match right padding */
+    height: 2px;
+    background-color: var(--accent-color);
+    transform: scaleX(0);
+    /* Start hidden */
+    transform-origin: left;
+    transition: transform 0.3s ease;
+}
+
+nav a:hover,
+nav a:focus {
+    color: var(--accent-color);
+    /* Change text color on hover/focus */
+    background-color: var(--nav-link-hover-bg);
+    /* Subtle background change */
+}
+
+/* Make underline visible on hover/focus */
+nav a:hover::after,
+nav a:focus::after {
+    transform: scaleX(1);
+    /* Scale underline to full width */
+}
+
+/* Style for the "active" link (requires JS to add/remove 'active' class based on scroll position) */
+nav a.active {
+    color: var(--accent-color);
+    font-weight: 700;
+    /* Make active link slightly bolder */
+}
+
+nav a.active::after {
+    transform: scaleX(1);
+    /* Ensure active link always has underline */
+    background-color: var(--accent-color);
+}
+
+/* Section Base Styles */
+section {
+    padding: 80px 0;
+    /* Add vertical padding to sections */
+}
+
+/* Home Section */
+#home .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
     max-width: 1300px;
-    margin: 150px auto;
-    margin-bottom: 5vh;
-    padding: 10px;
+    margin: 0 auto;
+    /* Changed from 50px auto to remove top margin */
+    padding: 20px;
     box-sizing: border-box;
 }
 
-.section-title {
-    text-align: center;
-    margin-bottom: 50px;
-    font-size: 2.5rem;
+#home .profile-content {
+    flex-basis: 50%;
+    text-align: left;
+    padding-right: 20px;
+    /* Add some space between text and image */
 }
 
-.resume-content {
-    max-width: 50%;
-    margin: auto;
-    text-align: justify;
+#home .profile-picture-wrapper {
+    flex-basis: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
 }
 
-.resume-item {
-    margin-bottom: 40px;
+#home .profile-picture {
+    width: 80%;
+    max-width: 500px;
+    border-radius: 10px;
+    object-fit: cover;
+    box-shadow: 0 4px 10px var(--shadow-color);
 }
 
-.resume-item h3 {
-    font-size: 2rem;
-    margin-bottom: 20px;
+#home h1 {
+    margin: 0;
+    color: var(--text-color);
+    line-height: 1.2;
 }
 
-.section-title {
+#home #hello {
+    font-size: 3em;
+    font-weight: 200;
+    font-family: var(--font-secondary);
+}
+
+#home #name {
+    font-size: 10em;
+    font-family: var(--font-secondary);
     font-weight: 700;
-    text-align: center;
-    font-size: 3.9em;
-    font-family: 'Roboto', sans-serif;
-}
-
-.experience-item h4 {
-    font-size: 1.5rem;
+    margin-top: 10px;
     margin-bottom: 10px;
 }
 
-.experience-item p,
-.experience-item li {
-    font-size: 1rem;
+#home .dot {
+    color: var(--accent-color);
 }
 
-ul {
-    list-style-position: inside;
+#home #course {
+    font-size: 1.7em;
+    color: var(--text-color);
+    text-align: justify;
+    max-width: 600px;
+    /* Prevent line from getting too long */
 }
 
-.project-text {
+#home #call-to-action {
+    font-size: 1.2em;
+    /* Slightly smaller than #course */
+    font-weight: 600;
+    /* Bolder than normal text */
+    color: var(--text-color);
+    /* Keep consistent text color */
+    margin-top: 1.5em;
+    /* Add more space above it */
+    margin-bottom: 1.5em;
+    /* Add space below before social links */
+    max-width: 550px;
+    /* Ensure it doesn't get too wide */
+    line-height: 1.5;
+}
+
+#home .social-links a {
+    margin: 0 10px;
+    color: var(--text-color);
+    text-decoration: none;
+    transition: color 0.3s ease, transform 0.2s ease;
+    display: inline-block;
+    /* Allows transform */
+}
+
+#home .social-links a i {
     font-size: 3em;
-    font-family: Nunito, sans-serif;
-    text-align: center;
 }
 
+#home .social-links a:hover,
+#home .social-links a:focus {
+    transform: scale(1.1);
+    /* Add slight scale effect */
+}
+
+#home .social-links .linkedin:hover,
+#home .social-links .linkedin:focus {
+    color: #0077b5;
+    /* Specific LinkedIn color */
+}
+
+#home .social-links .github:hover,
+#home .social-links .github:focus {
+    color: #8a8a8a;
+    /* Specific GitHub hover color */
+}
+
+#home .social-links .email:hover,
+#home .social-links .email:focus {
+    color: #c9510c;
+    /* Specific Email hover color */
+}
+
+
+/* Page Break Styles */
+.page-break-1,
+.page-break-2,
+.page-break-3 {
+    height: 100px;
+    /* Consider if this height is needed */
+    background-image: linear-gradient(to right, var(--bg-color), var(--text-color), var(--bg-color));
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 80% 2px;
+    margin: 40px 0;
+    /* Add some vertical margin */
+}
+
+/* About Section */
+#about {
+    overflow: hidden;
+    min-height: 50vh;
+    justify-content: start;
+    align-items: center;
+}
+
+#about .second-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* Align items vertically */
+    max-width: 90%;
+    margin: 0 auto;
+    /* Adjusted margins */
+    padding: 10px;
+    box-sizing: border-box;
+    height: 90%;
+    gap: 30px;
+    /* Add gap between text and image track */
+}
+
+#about p {
+    margin: 0 0 1em 0;
+    /* Standard paragraph margin */
+    font-size: 1.7em;
+    max-width: 600px;
+    /* Limit width for readability */
+}
+
+#about #about-container {
+    /* Removed transform: translateY(-10%); - adjust alignment with flexbox */
+    flex-basis: 50%;
+    /* Allocate space */
+    padding-right: 20px;
+}
+
+#about .header {
+    font-family: var(--font-secondary);
+    margin-bottom: 20px;
+    /* Increased spacing */
+    margin-top: 0;
+    font-weight: 700;
+    text-align: left;
+    font-size: 3.9em;
+}
+
+#about .stack {
+    font-size: 3em;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    /* Space out icons */
+}
+
+#about .stack-inside,
+#about .hobby-header {
+    /* Assuming .hobby-header might be used */
+    font-size: 2.5em;
+    /* Slightly reduced size */
+    margin-bottom: 10px;
+    /* Spacing */
+    margin-top: 20px;
+    font-family: var(--font-secondary);
+}
+
+/* Icon Colors (keep specific colors) */
+.fa-python {
+    color: #3776AB;
+}
+
+.fa-java {
+    color: #007396;
+}
+
+.fa-js-square {
+    color: #dfc502;
+}
+
+.fa-html5 {
+    color: #E34F26;
+}
+
+.fa-css3-alt {
+    color: #1572B6;
+}
+
+.fa-node-js {
+    color: #339933;
+}
+
+.fa-docker {
+    color: #2496ED;
+}
+
+.fa-git-alt {
+    color: #F05032;
+}
+
+.fa-github {
+    color: #181717;
+}
+
+.fa-gitlab {
+    color: #FC6D26;
+}
+
+.fa-vuejs {
+    color: #4FC08D;
+}
+
+.fa-robot,
+.fa-user-secret {
+    color: #00B0D8;
+}
+
+/* Example consolidation */
+.fa-chart-bar {
+    color: #FF6384;
+}
+
+.fa-aws {
+    color: #FF9900;
+}
+
+.fa-database {
+    color: #336791;
+}
+
+/* Image Track Container */
+#about #tracker-container {
+    position: relative;
+    /* Keep relative for absolute positioning of track */
+    width: 50%;
+    /* Take up remaining space */
+    min-height: 400px;
+    /* Ensure container has height */
+    display: flex;
+    /* Use flex to help center */
+    align-items: center;
+    justify-content: center;
+}
+
+#about #image-track {
+    display: flex;
+    gap: 3vmin;
+    position: absolute;
+    /* Position relative to tracker-container */
+    /* Adjust left/top/transform if needed after flex alignment */
+    left: 10%;
+    top: 50%;
+    transform: translate(0%, -50%);
+    user-select: none;
+}
+
+#about #image-track>.image {
+    border-radius: 10px;
+    box-shadow: 3px 3px 5px var(--shadow-color), -3px -3px 5px var(--shadow-color);
+    width: 50vmin;
+    height: auto;
+    object-fit: cover;
+    object-position: center;
+}
+
+
+/* Projects Section */
 #projects {
     padding: 60px 0;
 }
 
-.fourth-container {
+#projects .fourth-container {
     max-width: 1300px;
-    margin: 150px auto;
-    margin-bottom: 5vh;
-    padding: 10px;
+    margin: 0 auto;
+    /* Centered */
+    padding: 20px;
+    /* Consistent padding */
     box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* Center grid horizontally */
+}
+
+#projects .section-title {
+    font-weight: 700;
+    text-align: center;
+    /* Center title */
+    font-size: 3.9em;
+    font-family: var(--font-secondary);
+    margin-bottom: 50px;
+    /* Space below title */
+    margin-top: 0;
+    width: 100%;
+    /* Ensure title spans width before centering */
 }
 
 .projects-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 2rem;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
+    width: 100%;
+    /* Ensure grid takes full container width */
     justify-content: center;
 }
 
 .project-card {
-    background-color: #EAE7DC;
-    /* Slightly lighter than your background */
+    background-color: var(--card-bg-color);
     border-radius: 10px;
     padding: 1.5rem;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border: 1px solid rgba(44, 54, 57, 0.1);
-    /* Based on your text color */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border: 1px solid var(--border-color);
+    box-shadow: 0 4px 6px var(--shadow-color);
     text-align: left;
-}
-
-.project-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-}
-
-.project-title {
-    font-size: 1.5rem;
-    margin-bottom: 0.75rem;
-    color: #2C3639;
-    /* Your main text color */
-    font-family: 'Roboto', sans-serif;
-    font-weight: 700;
-}
-
-.project-description {
-    color: #2C3639;
-    /* Your main text color */
-    margin-bottom: 1.5rem;
-    font-size: 1rem;
-    line-height: 1.5;
-    font-family: 'Nunito', sans-serif;
-}
-
-.project-links {
-    margin-bottom: 1rem;
-}
-
-.project-links a {
-    display: inline-flex;
-    align-items: center;
-    color: #0077b5;
-    /* Your accent blue color from the dot class */
-    text-decoration: none;
-    margin-right: 1rem;
-    font-size: 0.9rem;
-    transition: color 0.2s ease;
-    font-family: 'Nunito', sans-serif;
-}
-
-.project-links a:hover {
-    color: #2C3639;
-    /* Your main text color */
-}
-
-.project-links i {
-    margin-right: 0.5rem;
-    font-size: 1.1rem;
-}
-
-.project-tags {
     display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
+    /* Use flexbox for better internal layout */
+    flex-direction: column;
 }
 
-.tag {
-    background-color: rgba(0, 119, 181, 0.1);
-    /* Semi-transparent version of your blue */
-    color: #0077b5;
-    /* Your accent blue color */
-    padding: 0.25rem 0.75rem;
-    border-radius: 15px;
-    font-size: 0.8rem;
-    display: inline-block;
-    font-family: 'Nunito', sans-serif;
+.project-card:hover,
+.project-card:focus-within {
+    /* Apply effect when card or its children have focus */
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px var(--hover-shadow-color);
 }
 
-/* Project Image Styling */
 .project-image-container {
     width: 100%;
     height: 180px;
+    /* Keep fixed height or use aspect-ratio */
     overflow: hidden;
     border-radius: 8px;
     margin-bottom: 1rem;
@@ -450,31 +549,255 @@ ul {
     transform: scale(1.05);
 }
 
-/* Fix for Projects title alignment */
-.fourth-container {
-    max-width: 1300px;
-    margin: 80px auto;
-    margin-bottom: 5vh;
-    padding: 10px;
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.project-title {
+    font-size: 1.5rem;
+    margin-bottom: 0.75rem;
+    color: var(--text-color);
+    font-family: var(--font-secondary);
+    font-weight: 700;
 }
 
-.section-title {
-    font-weight: 700;
-    text-align: center;
-    font-size: 3.9em;
-    font-family: 'Roboto', sans-serif;
-    align-self: flex-start;
-    margin-bottom: 30px;
-    margin-top: 0;
+.project-description {
+    color: var(--text-color);
+    margin-bottom: 1.5rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    flex-grow: 1;
+    /* Allow description to fill space */
+}
+
+.project-links {
+    margin-bottom: 1rem;
+}
+
+.project-links a {
+    display: inline-flex;
+    align-items: center;
+    color: var(--accent-color);
+    text-decoration: none;
+    margin-right: 1rem;
+    font-size: 0.9rem;
+    transition: color 0.2s ease;
+    font-family: var(--font-primary);
+    padding: 2px 4px;
+    /* Add padding for focus outline */
+    border-radius: 3px;
+    /* Rounded corners for focus */
+}
+
+.project-links a:hover,
+.project-links a:focus {
+    color: var(--link-hover-color);
+    /* Use variable */
+    text-decoration: underline;
+    /* Add underline on hover/focus */
+}
+
+.project-links i {
+    margin-right: 0.5rem;
+    font-size: 1.1rem;
+}
+
+.project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: auto;
+    /* Push tags to the bottom */
+}
+
+.tag {
+    background-color: var(--tag-bg-color);
+    color: var(--accent-color);
+    padding: 0.25rem 0.75rem;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    display: inline-block;
+    font-family: var(--font-primary);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.tag:hover {
+    background-color: var(--accent-color);
+    /* Darker background on hover */
+    color: var(--bg-color);
+    /* Lighter text on hover */
+}
+
+
+/* Responsive Design */
+
+@media only screen and (max-width: 1200px) {
+    #home #name {
+        font-size: 8em;
+        /* Adjust for slightly smaller screens */
+    }
+}
+
+
+@media only screen and (max-width: 992px) {
+    #home #name {
+        font-size: 7em;
+    }
+
+    #home #course,
+    #about p {
+        font-size: 1.5em;
+    }
+
+    #about .second-container {
+        flex-direction: column;
+        /* Stack about content and image track */
+        align-items: center;
+        text-align: center;
+    }
+
+    #about #about-container {
+        padding-right: 0;
+        margin-bottom: 40px;
+        /* Space below text */
+        text-align: center;
+    }
+
+    #about .header,
+    #about .stack-inside {
+        text-align: center;
+        /* Center headers */
+        font-size: 3em;
+    }
+
+    #about .stack {
+        justify-content: center;
+        /* Center icons */
+    }
+
+    #about #tracker-container {
+        width: 80%;
+        /* Make track wider */
+        min-height: 350px;
+        /* Adjust height */
+        margin-top: 0;
+        /* Reset margin */
+    }
+
+    #about #image-track {
+        left: 5%;
+        /* Adjust position */
+    }
 }
 
 @media only screen and (max-width: 768px) {
+
+    /* Adjust padding and font sizes for smaller screens */
+    body {
+        padding-top: calc(var(--nav-height) - 10px);
+        /* Adjust if nav height changes */
+    }
+
+    header {
+        height: calc(var(--nav-height) - 10px);
+        /* Slightly smaller nav */
+    }
+
+    nav ul {
+        justify-content: space-around;
+        /* Space out items more */
+        padding: 0 10px;
+    }
+
+    nav li {
+        margin: 0 5px;
+        /* Reduce margin */
+    }
+
+    nav a {
+        font-size: 0.9em;
+        /* Smaller nav text */
+    }
+
+    #home .container {
+        flex-direction: column;
+        padding: 0 15px;
+        text-align: center;
+        /* Center text content */
+    }
+
+    #home .profile-content {
+        order: 2;
+        /* Put text below image */
+        padding-right: 0;
+        margin-top: 20px;
+    }
+
+    #home .profile-picture-wrapper {
+        order: 1;
+        /* Image first */
+        flex-basis: auto;
+        /* Reset basis */
+        width: 60%;
+        /* Control image size */
+        max-width: 300px;
+        padding: 10px;
+    }
+
+    #home .profile-picture {
+        width: 100%;
+    }
+
+    #home #name {
+        font-size: 5em;
+        /* Smaller name */
+    }
+
+    #home #hello {
+        font-size: 2em;
+    }
+
+    #home #course {
+        font-size: 1.2em;
+        text-align: center;
+    }
+
+    #home .social-links a i {
+        font-size: 2.5em;
+    }
+
+    /* Hide elements not suitable for small screens */
+    .page-break-1,
+    .page-break-2,
+    .page-break-3 {
+        display: none;
+        /* Remove page breaks */
+    }
+
+    #about #tracker-container {
+        display: none;
+        /* Hide image tracker on mobile as originally intended */
+        /* Alternatively, implement a simple mobile gallery here */
+    }
+
+    #about .second-container {
+        max-width: 95%;
+        margin-top: 40px;
+        /* Adjust spacing */
+    }
+
+    #about p {
+        font-size: 1.2em;
+    }
+
+
+    #projects .fourth-container {
+        padding: 15px;
+    }
+
+    #projects .section-title {
+        font-size: 3em;
+    }
+
     .projects-grid {
         grid-template-columns: 1fr;
+        /* Single column layout */
         max-width: 90%;
         margin-left: auto;
         margin-right: auto;
@@ -485,56 +808,63 @@ ul {
     }
 }
 
-@media only screen and (max-width: 768px) {
-
-    #home .container,
-    #about .second-container,
-    .third-container {
-        flex-direction: column;
-        padding: 0 10px;
-    }
-
-    #home .profile-content,
-    #home .profile-picture-wrapper,
-    #about-container,
-    .resume-content {
-        flex-basis: 100%;
-        text-align: center;
-    }
-
-    #name {
-        font-size: 5em;
-        /* Adjust font size for smaller screens */
-    }
-
-    .page-break-1,
-    .page-break-2,
-    .page-break-3,
-    #tracker-container,
-    #image-track>.image {
-        display: none;
-        /* Optionally hide elements that may not fit well on small screens */
-    }
-
-    .social-links a i,
-    .fa-python,
-    .fa-java,
-    /* and other icons */
-        {
-        font-size: 2em;
-        /* Adjust icon size for smaller screens */
-    }
-}
-
 @media only screen and (max-width: 480px) {
+    nav ul {
+        padding: 0 5px;
+    }
 
-    #hello,
-    #course,
-    p,
-    .header,
-    .stack-inside,
-    .hobby-header {
-        font-size: 1.5em;
-        /* Further reduce font size for very small screens */
+    nav li {
+        margin: 0 2px;
+    }
+
+    nav a {
+        font-size: 0.8em;
+        padding: 3px 5px;
+    }
+
+    #home #name {
+        font-size: 4em;
+    }
+
+    #home #hello {
+        font-size: 1.8em;
+    }
+
+    #home #course {
+        font-size: 1.1em;
+    }
+
+    #home .social-links a i {
+        font-size: 2em;
+    }
+
+    #about .header,
+    #about .stack-inside {
+        font-size: 2.5em;
+    }
+
+    #about p {
+        font-size: 1.1em;
+    }
+
+    #about .stack {
+        font-size: 2em;
+        gap: 10px;
+    }
+
+    #projects .section-title {
+        font-size: 2.5em;
+    }
+
+    .project-card {
+        padding: 1rem;
+    }
+
+    .project-title {
+        font-size: 1.2rem;
+    }
+
+    .project-description {
+        font-size: 0.9rem;
     }
 }
