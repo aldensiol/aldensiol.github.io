@@ -5,48 +5,52 @@
     --bg-color: #DCD7C9;
     --text-color: #2C3639;
     --accent-color: #0077b5;
-    /* LinkedIn Blue */
+    /* LinkedIn Blue - Keep for primary actions/icons */
     --card-bg-color: #EAE7DC;
     --border-color: rgba(44, 54, 57, 0.1);
-    --shadow-color: rgba(0, 0, 0, 0.1);
-    --hover-shadow-color: rgba(0, 0, 0, 0.2);
+    --shadow-color: rgba(44, 54, 57, 0.08);
+    /* Softer shadow */
+    --hover-shadow-color: rgba(44, 54, 57, 0.15);
+    /* Softer hover shadow */
     --tag-bg-color: rgba(0, 119, 181, 0.1);
-    /* Semi-transparent accent */
+    /* Semi-transparent accent for tags */
     --link-hover-color: #A27B5C;
-    /* A complementary color */
+    /* <<<< WARM ACCENT COLOR >>>> */
 
     --font-primary: 'Nunito', sans-serif;
     --font-secondary: 'Roboto', sans-serif;
 
     --nav-height: 60px;
-    /* Adjust as needed */
     --nav-bg-color: #cfcabb;
-    /* Slightly darker shade of the main bg */
     --nav-border-color: #bcaea0;
-    /* A bit darker for the border */
     --nav-link-hover-bg: rgba(44, 54, 57, 0.05);
-    /* Subtle background on link hover */
 }
 
 /* Global Styles */
 html {
     scroll-behavior: smooth;
-    /* Enable smooth scrolling for nav links */
     scroll-padding-top: var(--nav-height);
-    /* Offset scroll target for fixed nav */
+}
+
+main {
+    flex-grow: 1;
+    /* Allow main content to take available space, pushing footer down */
 }
 
 body {
     min-height: 100vh;
+    /* Ensure body takes full viewport height */
     font-family: var(--font-primary);
     margin: 0;
     padding: 0;
     padding-top: var(--nav-height);
-    /* Prevent content from hiding behind fixed nav */
     background-color: var(--bg-color);
     color: var(--text-color);
     line-height: 1.6;
-    /* Improve readability */
+    display: flex;
+    /* Use flexbox for footer positioning */
+    flex-direction: column;
+    /* Stack content vertically */
 }
 
 /* Basic focus outline for accessibility */
@@ -54,6 +58,7 @@ a:focus,
 button:focus,
 [tabindex]:focus {
     outline: 2px solid var(--accent-color);
+    /* Keep blue for general focus */
     outline-offset: 2px;
 }
 
@@ -69,18 +74,13 @@ header {
     top: 0;
     left: 0;
     width: 100%;
-    /* Use the new nav background color */
     background-color: var(--nav-bg-color);
-    /* Remove box-shadow, use border instead for cleaner look */
-    /* box-shadow: 0 2px 5px var(--shadow-color); */
     border-bottom: 1px solid var(--nav-border-color);
-    /* Add a subtle bottom border */
     z-index: 1000;
     height: var(--nav-height);
     display: flex;
     align-items: center;
     transition: background-color 0.3s ease;
-    /* Smooth transition if you add scroll effects later */
 }
 
 nav ul {
@@ -163,9 +163,12 @@ nav a.active::after {
 }
 
 /* Section Base Styles */
+/* Section Base Styles */
 section {
-    padding: 80px 0;
-    /* Add vertical padding to sections */
+    padding: 80px 20px;
+    /* <<<< Consistent vertical and horizontal padding >>>> */
+    box-sizing: border-box;
+    /* Ensure padding is included in width calculations */
 }
 
 /* Home Section */
@@ -175,16 +178,17 @@ section {
     align-items: center;
     max-width: 1300px;
     margin: 0 auto;
-    /* Changed from 50px auto to remove top margin */
-    padding: 20px;
-    box-sizing: border-box;
+    /* Center container within section padding */
+    /* padding: 20px; */
+    /* Removed, handled by section */
 }
 
 #home .profile-content {
     flex-basis: 50%;
     text-align: left;
-    padding-right: 20px;
-    /* Add some space between text and image */
+    padding-right: 30px;
+    /* Increased space between text and image slightly */
+    box-sizing: border-box;
 }
 
 #home .profile-picture-wrapper {
@@ -192,7 +196,8 @@ section {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 20px;
+    /* padding: 20px; */
+    /* Removed, handled by container */
 }
 
 #home .profile-picture {
@@ -201,6 +206,7 @@ section {
     border-radius: 10px;
     object-fit: cover;
     box-shadow: 0 4px 10px var(--shadow-color);
+    /* Use soft shadow */
 }
 
 #home h1 {
@@ -225,29 +231,24 @@ section {
 
 #home .dot {
     color: var(--accent-color);
+    /* Keep original blue dot for name emphasis */
 }
 
 #home #course {
     font-size: 1.7em;
     color: var(--text-color);
-    text-align: justify;
+    /* text-align: justify; */
+    /* Removed justify, left align is often more readable */
     max-width: 600px;
-    /* Prevent line from getting too long */
 }
 
 #home #call-to-action {
     font-size: 1.2em;
-    /* Slightly smaller than #course */
     font-weight: 600;
-    /* Bolder than normal text */
     color: var(--text-color);
-    /* Keep consistent text color */
     margin-top: 1.5em;
-    /* Add more space above it */
     margin-bottom: 1.5em;
-    /* Add space below before social links */
     max-width: 550px;
-    /* Ensure it doesn't get too wide */
     line-height: 1.5;
 }
 
@@ -257,7 +258,6 @@ section {
     text-decoration: none;
     transition: color 0.3s ease, transform 0.2s ease;
     display: inline-block;
-    /* Allows transform */
 }
 
 #home .social-links a i {
@@ -267,25 +267,22 @@ section {
 #home .social-links a:hover,
 #home .social-links a:focus {
     transform: scale(1.1);
-    /* Add slight scale effect */
 }
 
 #home .social-links .linkedin:hover,
 #home .social-links .linkedin:focus {
     color: #0077b5;
-    /* Specific LinkedIn color */
 }
 
 #home .social-links .github:hover,
 #home .social-links .github:focus {
-    color: #8a8a8a;
-    /* Specific GitHub hover color */
+    color: #333;
 }
 
+/* Darker GitHub grey */
 #home .social-links .email:hover,
 #home .social-links .email:focus {
-    color: #c9510c;
-    /* Specific Email hover color */
+    color: var(--link-hover-color);
 }
 
 
@@ -306,45 +303,39 @@ section {
 /* About Section */
 #about {
     overflow: hidden;
-    min-height: 50vh;
-    justify-content: start;
-    align-items: center;
+    /* Keep hidden for image track overflow */
 }
 
 #about .second-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    /* Align items vertically */
     max-width: 90%;
+    /* Keep this constraint */
     margin: 0 auto;
-    /* Adjusted margins */
-    padding: 10px;
-    box-sizing: border-box;
-    height: 90%;
-    gap: 30px;
-    /* Add gap between text and image track */
+    /* Center container within section padding */
+    /* padding: 10px; */
+    /* Removed, handled by section */
+    gap: 40px;
+    /* Increased gap slightly */
 }
 
 #about p {
     margin: 0 0 1em 0;
-    /* Standard paragraph margin */
     font-size: 1.4em;
     max-width: 600px;
-    /* Limit width for readability */
 }
 
 #about #about-container {
-    /* Removed transform: translateY(-10%); - adjust alignment with flexbox */
     flex-basis: 50%;
-    /* Allocate space */
     padding-right: 20px;
+    /* Space between text and image track area */
+    box-sizing: border-box;
 }
 
 #about .header {
     font-family: var(--font-secondary);
     margin-bottom: 20px;
-    /* Increased spacing */
     margin-top: 0;
     font-weight: 700;
     text-align: left;
@@ -352,20 +343,28 @@ section {
 }
 
 #about .stack {
-    font-size: 3em;
+    font-size: 2.5em;
+    /* <<<< Slightly smaller icons >>>> */
     display: flex;
     flex-wrap: wrap;
-    gap: 15px;
-    /* Space out icons */
+    gap: 12px;
+    /* <<<< Slightly reduced gap >>>> */
+}
+
+#about .stack i {
+    transition: transform 0.2s ease;
+    /* Add hover effect */
+}
+
+#about .stack i:hover {
+    transform: scale(1.1);
+    /* Slight scale on hover */
 }
 
 #about .stack-inside,
 #about .hobby-header {
-    /* Assuming .hobby-header might be used */
     font-size: 2.5em;
-    /* Slightly reduced size */
     margin-bottom: 10px;
-    /* Spacing */
     margin-top: 20px;
     font-family: var(--font-secondary);
 }
@@ -407,6 +406,7 @@ section {
     color: #181717;
 }
 
+/* GitHub icon in stack */
 .fa-gitlab {
     color: #FC6D26;
 }
@@ -420,7 +420,6 @@ section {
     color: #00B0D8;
 }
 
-/* Example consolidation */
 .fa-chart-bar {
     color: #FF6384;
 }
@@ -436,13 +435,9 @@ section {
 /* Image Track Container */
 #about #tracker-container {
     position: relative;
-    /* Keep relative for absolute positioning of track */
     width: 50%;
-    /* Take up remaining space */
     min-height: 400px;
-    /* Ensure container has height */
     display: flex;
-    /* Use flex to help center */
     align-items: center;
     justify-content: center;
 }
@@ -451,29 +446,30 @@ section {
     display: flex;
     gap: 3vmin;
     position: absolute;
-    /* Position relative to tracker-container */
-    /* Adjust left/top/transform if needed after flex alignment */
     left: 10%;
     top: 50%;
     transform: translate(0%, -50%);
     user-select: none;
+    cursor: grab;
+}
+
+#about #image-track:active {
+    cursor: grabbing;
 }
 
 #about #image-track>.image {
     border-radius: 10px;
     box-shadow: 3px 3px 5px var(--shadow-color), -3px -3px 5px var(--shadow-color);
     width: 50vmin;
-    height: auto;
+    /* Responsive width */
+    height: 65vmin;
+    /* Responsive height */
     object-fit: cover;
     object-position: center;
 }
 
 
 /* Projects Section */
-#projects {
-    padding: 60px 0;
-}
-
 #projects .fourth-container {
     max-width: 1300px;
     margin: 0 auto;
@@ -490,14 +486,11 @@ section {
 #projects .section-title {
     font-weight: 700;
     text-align: center;
-    /* Center title */
     font-size: 3.9em;
     font-family: var(--font-secondary);
     margin-bottom: 50px;
-    /* Space below title */
     margin-top: 0;
     width: 100%;
-    /* Ensure title spans width before centering */
 }
 
 .projects-grid {
@@ -505,7 +498,6 @@ section {
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 2rem;
     width: 100%;
-    /* Ensure grid takes full container width */
     justify-content: center;
 }
 
@@ -513,29 +505,31 @@ section {
     background-color: var(--card-bg-color);
     border-radius: 10px;
     padding: 1.5rem;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
     border: 1px solid var(--border-color);
     box-shadow: 0 4px 6px var(--shadow-color);
     text-align: left;
     display: flex;
-    /* Use flexbox for better internal layout */
     flex-direction: column;
 }
 
 .project-card:hover,
 .project-card:focus-within {
-    /* Apply effect when card or its children have focus */
     transform: translateY(-5px);
     box-shadow: 0 10px 20px var(--hover-shadow-color);
+    /* Use soft hover shadow var */
+    border: 1px solid var(--link-hover-color);
+    /* <<<< WARM accent border on hover >>>> */
 }
 
 .project-image-container {
     width: 100%;
     height: 180px;
-    /* Keep fixed height or use aspect-ratio */
     overflow: hidden;
     border-radius: 8px;
     margin-bottom: 1rem;
+    background-color: #ccc;
+    /* Placeholder background */
 }
 
 .project-image {
@@ -560,6 +554,7 @@ section {
 .project-description {
     color: var(--text-color);
     margin-bottom: 1.5rem;
+    /* Keep default bottom margin */
     font-size: 1rem;
     line-height: 1.5;
     flex-grow: 1;
@@ -569,13 +564,14 @@ section {
 .project-links {
     margin-bottom: 1rem;
     margin-top: 0.5rem;
+    /* <<<< ADDED: Space above links >>>> */
 }
 
 .project-links a {
     display: inline-flex;
     align-items: center;
     color: var(--accent-color);
-    /* Use primary accent for links */
+    /* Use primary blue for link text */
     text-decoration: none;
     margin-right: 1rem;
     font-size: 0.9rem;
@@ -588,7 +584,7 @@ section {
 .project-links a:hover,
 .project-links a:focus {
     color: var(--link-hover-color);
-    /* Use warm variable */
+    /* Use warm accent for hover */
     text-decoration: underline;
 }
 
@@ -608,6 +604,7 @@ section {
 .tag {
     background-color: var(--tag-bg-color);
     color: var(--accent-color);
+    /* Match primary accent */
     padding: 0.25rem 0.75rem;
     border-radius: 15px;
     font-size: 0.8rem;
@@ -619,22 +616,41 @@ section {
 .tag:hover {
     background-color: var(--accent-color);
     /* Darker background on hover */
-    color: var(--bg-color);
+    color: var(--card-bg-color);
     /* Lighter text on hover */
+}
+
+/* Footer Styles */
+footer {
+    text-align: center;
+    padding: 25px 20px;
+    margin-top: 60px;
+    font-size: 0.9em;
+    color: var(--text-color);
+    opacity: 0.7;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 
 /* Responsive Design */
-
 @media only screen and (max-width: 1200px) {
     #home #name {
         font-size: 8em;
-        /* Adjust for slightly smaller screens */
+    }
+
+    #home .profile-content {
+        padding-right: 20px;
     }
 }
 
-
 @media only screen and (max-width: 992px) {
+    section {
+        padding: 70px 20px;
+    }
+
+    /* Slightly reduce section padding */
+
     #home #name {
         font-size: 7em;
     }
@@ -646,97 +662,104 @@ section {
 
     #about .second-container {
         flex-direction: column;
-        /* Stack about content and image track */
         align-items: center;
         text-align: center;
+        max-width: 100%;
+        /* Allow content to spread */
     }
 
     #about #about-container {
         padding-right: 0;
         margin-bottom: 40px;
-        /* Space below text */
         text-align: center;
+        /* Center align text */
+        max-width: 700px;
+        /* Limit width for readability */
+        width: 100%;
+        /* Allow it to take width */
     }
+
+    #about p {
+        text-align: center;
+        max-width: none;
+    }
+
+    /* Center paragraph */
 
     #about .header,
     #about .stack-inside {
         text-align: center;
-        /* Center headers */
         font-size: 3em;
     }
 
     #about .stack {
         justify-content: center;
-        /* Center icons */
     }
 
     #about #tracker-container {
-        width: 80%;
-        /* Make track wider */
+        width: 90%;
+        /* Wider track */
         min-height: 350px;
-        /* Adjust height */
-        margin-top: 0;
-        /* Reset margin */
+        margin-top: 20px;
+        /* Add space when stacked */
     }
 
     #about #image-track {
         left: 5%;
-        /* Adjust position */
     }
+
+    /* Adjust start position */
 }
 
 @media only screen and (max-width: 768px) {
-
-    /* Adjust padding and font sizes for smaller screens */
     body {
         padding-top: calc(var(--nav-height) - 10px);
-        /* Adjust if nav height changes */
     }
 
     header {
         height: calc(var(--nav-height) - 10px);
-        /* Slightly smaller nav */
     }
+
+    section {
+        padding: 60px 15px;
+    }
+
+    /* Further reduce padding */
 
     nav ul {
         justify-content: space-around;
-        /* Space out items more */
         padding: 0 10px;
     }
 
     nav li {
         margin: 0 5px;
-        /* Reduce margin */
     }
 
     nav a {
         font-size: 0.9em;
-        /* Smaller nav text */
     }
 
     #home .container {
         flex-direction: column;
-        padding: 0 15px;
+        /* padding: 0 15px; */
+        /* Handled by section */
         text-align: center;
-        /* Center text content */
     }
 
     #home .profile-content {
         order: 2;
-        /* Put text below image */
         padding-right: 0;
-        margin-top: 20px;
+        margin-top: 30px;
+        /* Increased space */
     }
 
     #home .profile-picture-wrapper {
         order: 1;
-        /* Image first */
         flex-basis: auto;
-        /* Reset basis */
         width: 60%;
-        /* Control image size */
         max-width: 300px;
-        padding: 10px;
+        /* padding: 10px; */
+        /* Removed */
     }
 
     #home .profile-picture {
@@ -745,7 +768,6 @@ section {
 
     #home #name {
         font-size: 5em;
-        /* Smaller name */
     }
 
     #home #hello {
@@ -761,33 +783,30 @@ section {
         font-size: 2.5em;
     }
 
-    /* Hide elements not suitable for small screens */
-    .page-break-1,
-    .page-break-2,
-    .page-break-3 {
-        display: none;
-        /* Remove page breaks */
-    }
 
+    /* --- Hide Image Track on Mobile --- */
     #about #tracker-container {
         display: none;
-        /* Hide image tracker on mobile as originally intended */
-        /* Alternatively, implement a simple mobile gallery here */
     }
 
     #about .second-container {
         max-width: 95%;
-        margin-top: 40px;
-        /* Adjust spacing */
+        margin-top: 0;
     }
 
+    /* Adjust spacing for text only */
+    #about #about-container {
+        flex-basis: auto;
+    }
+
+    /* Let text container take full width */
     #about p {
         font-size: 1.2em;
     }
 
-
     #projects .fourth-container {
-        padding: 15px;
+        /* padding: 15px; */
+        /* Handled by section */
     }
 
     #projects .section-title {
@@ -808,6 +827,12 @@ section {
 }
 
 @media only screen and (max-width: 480px) {
+    section {
+        padding: 50px 15px;
+    }
+
+    /* Even less padding */
+
     nav ul {
         padding: 0 5px;
     }
