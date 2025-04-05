@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400&family=Roboto:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Roboto:wght@700&display=swap');
 
 /* Define CSS Variables (Custom Properties) */
 :root {
@@ -320,9 +320,19 @@ section {
     /* Increased gap slightly */
 }
 
+p strong {
+    font-weight: 800;
+    letter-spacing: 0.01em;
+}
+
+p em {
+    font-style: italic;
+    font-weight: 600;
+}
+
 #about p {
     margin: 0 0 1em 0;
-    font-size: 1.4em;
+    font-size: 1.19em;
     max-width: 600px;
 }
 
