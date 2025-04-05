@@ -197,14 +197,44 @@ body {
         color: #F05032;
     }
 
-    /* React icon */
-    .fa-react {
-        color: #61DAFB;
+    /* GitHub icon */
+    .fa-github {
+        color: #181717;
+    }
+
+    /* GitLab icon */
+    .fa-gitlab {
+        color: #FC6D26;
     }
 
     /* Vue.js icon */
     .fa-vuejs {
         color: #4FC08D;
+    }
+
+    /* AI/Robot icon */
+    .fa-robot {
+        color: #00B0D8;
+    }
+
+    /* Data Science/Charts icon */
+    .fa-chart-bar {
+        color: #FF6384;
+    }
+
+    /* AWS icon */
+    .fa-aws {
+        color: #FF9900;
+    }
+
+    /* Database icon */
+    .fa-database {
+        color: #336791;
+    }
+
+    /* Slack icon */
+    .fa-user-secret {
+        color: #4A154B;
     }
 
     #tracker-container {
