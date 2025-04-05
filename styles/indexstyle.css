@@ -329,7 +329,7 @@ section {
 #about p {
     margin: 0 0 1em 0;
     /* Standard paragraph margin */
-    font-size: 1.7em;
+    font-size: 1.4em;
     max-width: 600px;
     /* Limit width for readability */
 }
