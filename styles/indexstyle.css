@@ -902,3 +902,63 @@ footer {
         font-size: 0.9rem;
     }
 }
+
+@media (min-width: 1600px) {
+    /* Adjust 1600px as needed */
+
+    #home .container,
+    #projects .fourth-container {
+        max-width: 1500px;
+        /* Increase max-width for home and projects */
+    }
+
+    #about .second-container {
+        max-width: 85%;
+        /* You could adjust the percentage slightly */
+        /* OR use a fixed value like the others */
+        /* max-width: 1500px; */
+    }
+
+    #about p {
+        max-width: 750px;
+        /* Allow text lines to be longer */
+    }
+
+    #about #about-container {
+        flex-basis: 55%;
+    }
+
+    #about #tracker-container {
+        width: 45%;
+    }
+
+}
+
+@media (min-width: 1920px) {
+    /* Even wider screens */
+
+    #home .container,
+    #projects .fourth-container {
+        max-width: 1700px;
+        /* Further increase */
+    }
+
+    #about .second-container {
+        max-width: 80%;
+        /* OR fixed value */
+        /* max-width: 1700px; */
+    }
+
+    #about p {
+        max-width: 850px;
+        /* Further increase */
+    }
+
+    #about #about-container {
+        flex-basis: 60%;
+    }
+
+    #about #tracker-container {
+        width: 40%;
+    }
+}
